@@ -8,7 +8,7 @@ public class Input {
 	public static boolean [] pkeys;
 		
 	//number of buttons in the game
-	public static final int NUM_KEYS = 12;
+	public static final int NUM_KEYS = 13;
 	public static final int SPACE = 0; 		//space
 	public static final int BUTTONW = 1; 		//W
 	public static final int BUTTONA = 2; 		//A
@@ -20,7 +20,8 @@ public class Input {
 	public static final int BUTTONLEFT = 8;        //Left
 	public static final int BUTTONRIGHT = 9;  		//Right
 	public static final int SHIFT = 10; 	    //Shift
-	public static final int BUTTONDEFAULT = 11; //No button pressed
+	public static final int ESCAPE = 11;
+	public static final int BUTTONDEFAULT = 12; //No button pressed
 		
 	static {
 		keys = new boolean[NUM_KEYS];
@@ -83,8 +84,11 @@ public class Input {
 		case 16:
 			i = 10; //shift
 			break;
+		case 27:
+		  i = 11;
+		  break;
 		default:
-			i = 11; //no set button pressed
+			i = 12; //no set button pressed
 			break;
 		} 
 		return i;

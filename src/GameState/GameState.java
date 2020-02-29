@@ -1,6 +1,9 @@
 package GameState;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
+
+import Main.WindowSize;
 
 public abstract class GameState {
 	
@@ -14,4 +17,10 @@ public abstract class GameState {
 	public abstract void update();
 	public abstract void draw(Graphics2D g);
 	public abstract void handleInput();
+	
+	public void clearScreen(Graphics2D g) {
+	  g.setColor(Color.BLACK);
+    g.fillRect(0, 0, WindowSize.WIDTH * WindowSize.SCALE, WindowSize.HEIGHT * WindowSize.SCALE);
+	}
+
 }

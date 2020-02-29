@@ -25,7 +25,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 	
 	private Graphics2D g;
 	private BufferedImage image;
-	private Dimension currentDimension;
+	
 	
 	public GamePanel() {
 		super();
@@ -53,11 +53,8 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 	private void update() {
 		gsm.update();
 		Input.update();
-		currentDimension = new Dimension(WindowSize.WIDTH * WindowSize.SCALE, WindowSize.HEIGHT * WindowSize.SCALE);
-		setSize(currentDimension);
-		JFrame parent = (JFrame) SwingUtilities.getWindowAncestor(this);
-		parent.setSize(currentDimension);
 		
+		WindowSize.resizeWindow(this);
 	}
 	
 	private void draw() {
