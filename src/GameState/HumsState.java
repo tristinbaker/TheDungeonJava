@@ -86,12 +86,10 @@ public class HumsState extends GameState {
     } else if(Input.isPressed(Input.BUTTONW) || Input.isPressed(Input.BUTTONUP)) {
       if(selected > 0) {
         selected--;
-        GameStateManager.player.setHp(GameStateManager.player.getHp()+1);
       }
     } else if(Input.isPressed(Input.BUTTONS) || Input.isPressed(Input.BUTTONDOWN)) {
       if(selected < options.length - 1) {
         selected++;
-        GameStateManager.player.setHp(GameStateManager.player.getHp()-1);
       }
     }
 		if(Input.isPressed(Input.ESCAPE)) {
