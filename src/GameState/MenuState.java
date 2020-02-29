@@ -50,12 +50,12 @@ public class MenuState extends GameState{
 	private void select() {
 		switch (selected) {
 		case 0:
-			gsm.setState(GameStateManager.TOWNSTATE);
+			gsm.setState(GameStateManager.TOWNSTATE, GameStateManager.getCurrentState());
 			break;
 		case 1:
 			break;
 		case 2: 
-			gsm.setState(GameStateManager.OPTIONSSTATE);
+			gsm.setState(GameStateManager.OPTIONSSTATE, GameStateManager.getCurrentState());
 			break;
 		case 3: 
 			System.exit(0);
@@ -64,8 +64,7 @@ public class MenuState extends GameState{
 
 	public void draw(Graphics2D g) {
 		
-	  g.setColor(Color.BLACK);
-	  g.fillRect(0, 0, WindowSize.WIDTH * WindowSize.SCALE, WindowSize.HEIGHT * WindowSize.SCALE);
+	  clearScreen(g);
 	
 	  g.setColor(titleColor);
 	  g.setFont(titleFont);

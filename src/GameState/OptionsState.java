@@ -17,13 +17,13 @@ public class OptionsState extends GameState {
 	}
 
 	private void accept() {
-		gsm.setState(GameStateManager.MENUSTATE);
+		gsm.setState(GameStateManager.getPreviousState(), GameStateManager.getCurrentState());
 	}
 	
 	@Override
 	public void init() {
 		// TODO Auto-generated method stub
-		
+	  
 	}
 
 	@Override
@@ -33,8 +33,7 @@ public class OptionsState extends GameState {
 
 	public void draw(Graphics2D g) {
 		
-		g.setColor(Color.BLACK);
-		g.fillRect(0, 0, WindowSize.WIDTH * WindowSize.SCALE, WindowSize.HEIGHT * WindowSize.SCALE);
+		clearScreen(g);
 		
 		g.setColor(optionColor);
 		g.drawString("Change Scale (Left/Right): " + WindowSize.SCALE, (int)(WindowSize.WIDTH * 0.3), (int)(WindowSize.HEIGHT * 0.4));
@@ -44,18 +43,17 @@ public class OptionsState extends GameState {
 
 	@Override
 	public void handleInput() {
-		System.out.println(WindowSize.SCALE);
 		if(Input.isPressed(Input.BUTTONRIGHT)) {
 			if(WindowSize.SCALE < 5) {
 				WindowSize.SCALE += 1;
 			}
 		} else if(Input.isPressed(Input.BUTTONLEFT) ) {
-			if(WindowSize.SCALE > 1) {
+			if(WindowSize.SCALE > 2) {
 				WindowSize.SCALE -= 1;
 			}
-		} else if(Input.isPressed(Input.ENTER)) {
+		} else if(Input.isPressed(Input.ENTER) || Input.isPressed(Input.ESCAPE)) {
 			accept();
-		}
+		} 
 	}
 
 }

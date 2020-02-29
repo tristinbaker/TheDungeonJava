@@ -42,6 +42,9 @@ public class InputProcessor implements KeyListener{
 		if(k == KeyEvent.VK_SHIFT) {
 			Input.setKey(Input.SHIFT, true);
 		}
+		if(k == KeyEvent.VK_ESCAPE) {
+		  Input.setKey(Input.ESCAPE, true);
+		}
 		System.out.println("Here");
 		return true;
 	}
@@ -83,6 +86,9 @@ public class InputProcessor implements KeyListener{
 		if(k == KeyEvent.VK_SHIFT) {
 			Input.setKey(Input.SHIFT, false);
 		}
+		if(k == KeyEvent.VK_ESCAPE) {
+      Input.setKey(Input.ESCAPE, false);
+    }
 		return true;
 	}
 	
